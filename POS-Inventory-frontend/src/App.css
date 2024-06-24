@@ -32,6 +32,8 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+@import '~antd/dist/antd.css';
+
 
 .card {
   padding: 2em;

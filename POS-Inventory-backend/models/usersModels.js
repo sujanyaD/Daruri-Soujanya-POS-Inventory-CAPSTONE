@@ -1,17 +1,19 @@
-const { Schema, model } = require('../config/db-connection');
 
-const userSchema = Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-    unique: true,
-    min: 5,
-  },
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  full_name: { type: String },
+  email: { type: String },
+  role: { type: String, enum: ['admin', 'cashier', 'manager'], default: 'cashier' },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now }
 });
 
-module.exports = model('User', userSchema);
+// Create a model from the schema
+const User = mongoose.model('User', userSchema);
+
+// Export the model
+module.exports = User;

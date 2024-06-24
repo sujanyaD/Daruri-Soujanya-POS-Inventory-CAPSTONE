@@ -1,8 +1,5 @@
-const User = require('../models/usersModels');
 
-module.exports = {
-  createUser,
-};
+const User = require('../models/usersModels');
 
 async function createUser(req, res) {
   try {
@@ -13,3 +10,6 @@ async function createUser(req, res) {
     res.status(400).json('No Beuno:(');
   }
 }
+module.exports = {
+  createUser,
+};

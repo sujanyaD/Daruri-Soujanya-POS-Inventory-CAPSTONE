@@ -1,32 +1,37 @@
-// Requiring and configuring the .env file to access its variables
+
 require('dotenv').config();
-// Requiring express
 const express = require('express');
-// Creating the express server and storing inside the app variable
 const app = express();
-// Port in which the server will run on
-const PORT = process.env.PORT || 8000;
-// Requiring example router
-const userRouter = require('./routes/usersRoutes.js');
+const morgan=require('morgan');//used morgan for logging HTTP request for node.js
+const PORT = process.env.PORT || 5000; // Port in which the server will run on
+const cors=require('cors');
+const { bgCyan } = require("colors");
+require("colors");
+const connectDb = require('./config/db-connection.js');
+connectDb();
+const productRouter= require('./routes/productsRoutes.js');
+const userRouter=require('./routes/usersRoutes.js');
+const salesRouter=require('./routes/salesRoutes.js')
 
-// Configuring the server to accept and parse JSON data.
+//middleware
+app.use(cors());
 app.use(express.json());
+ app.use(morgan('dev'));
 
-//Custom Middlware
-app.use((req, res, next) => {
-  console.log(`A ${req.method} request was made to ${req.url}`);
-  next();
+
+//routes
+app.use('/', productRouter);
+app.use('/users',userRouter);
+app.use('/sales',salesRouter);
+
+
+//error handling middleware
+app.use((err,req,res,next)=>{
+  res.status(500).send('something went wrong');
+})
+
+ // Calling the listen function telling the server to listen on port 3000
+ app.listen(PORT, () => {
+  console.log(`Listening on port: ${PORT}`.yellow);
 });
 
-// Connecting the router to the server
-app.use('/users', userRouter);
-
-// Error Handling Middlware
-app.use((err, req, res, next) => {
-  res.status(500).send('Something went wrong.');
-});
-
-// Calling the listen function telling the server to listen on port 3000
-app.listen(PORT, () => {
-  console.log(`Listening on port: ${PORT}`);
-});
