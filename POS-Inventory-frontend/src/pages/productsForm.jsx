@@ -51,7 +51,7 @@ const Products = () => {
       <List>
         {products.map((product) => (
           <ListItem key={product._id}>
-            <ListItemText primary={`${product.name} - $${product.price} - ${product.quantity} pcs`} />
+            <ListItemText primary={`${product.ProductName} - $${product.ProductPrice} - ${product.ProductQuantity} pcs`} />
             <Button onClick={() => handleEditProduct(product)} variant="outlined">Edit</Button>
             <Button onClick={() => handleDeleteProduct(product._id)} variant="outlined" color="secondary">Delete</Button>
           </ListItem>

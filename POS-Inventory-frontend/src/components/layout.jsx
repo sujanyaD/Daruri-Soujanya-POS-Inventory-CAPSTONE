@@ -7,7 +7,7 @@ const Layout=({children})=>{
         <Box display="flex">
             <Sidebar/>
         <Box flexGrow={1} padding={3}>
-            {children}
+            {children} 
         </Box>
         </Box>
     );
