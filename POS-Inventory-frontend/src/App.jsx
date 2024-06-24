@@ -1,14 +1,17 @@
 
 
 import React, { useEffect, useState } from 'react';
-import navbarHomePage from './pages/Navbar';
+import NavbarPOS from './components/Navbar';
+import SidebarPOS from './components/Sidebar';
+import Layout from './components/layout';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { getProducts, createProduct, updateProduct, deleteProduct, getSales, createSale } from './services/api';
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [sales, setSales] = useState([]);
   const [newProduct, setNewProduct] = useState({ name: '', price: 0, quantity: 0 });
-
+// using use effect Hook to fetch API
   useEffect(() => {
     fetchProducts();
     fetchSales();
@@ -47,8 +50,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>POS and Inventory Management</h1>
+      {/* <h1>POS and Inventory Management</h1> */}
       <div>
+        <NavbarPOS title="POS-IMS" about="About"></NavbarPOS>
+        <SidebarPOS title="POS" about="Home"></SidebarPOS>
+
         <h2>Products</h2>
         <input type="text" placeholder="Name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} />
         <input type="number" placeholder="Price" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} />
@@ -75,6 +81,7 @@ const App = () => {
         </ul>
       </div>
     </div>
+  
   );
 };
 
