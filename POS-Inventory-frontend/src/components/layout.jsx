@@ -1,14 +1,20 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 import {Box} from '@mui/material';
 
-const Layout=({children})=>{
-    return(
+const Layout = ({ children }) => {
+    return (
         <Box display="flex">
-            <Sidebar/>
-        <Box flexGrow={1} padding={3}>
-            {children} 
-        </Box>
+            <Box>
+                <Sidebar />
+            </Box>
+            <Box flexGrow={1} padding={3}>
+                {children}
+            </Box>
+            <Box>
+                <Navbar />
+            </Box>
         </Box>
     );
 };

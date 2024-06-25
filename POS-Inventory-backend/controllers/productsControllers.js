@@ -30,7 +30,7 @@ const getAllProducts = async (req, res) => {
   //add new products
   const addNewProduct= async (req,res)=>{
     try{
-        const newProduct= new productsModel(re.body);
+        const newProduct= new productsModel(req.body);
         await newProduct.save();
         res.status(201).send("New Product added Sucessfully");
     }catch(error){
@@ -45,7 +45,7 @@ const updateProduct = async (req, res) => {
         const { productId } = req.body;
         const updatedProduct = await productsModel.findOneAndUpdate(
             { _id: productId },
-            req.body, // Assuming req.body contains updated fields
+            req.body,
             { new: true }
         );
         if (!updatedProduct) {

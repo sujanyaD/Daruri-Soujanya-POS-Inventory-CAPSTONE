@@ -9,3 +9,6 @@ export const deleteProduct = (id) => axios.delete(`${API_URL}/products/${id}`);
 
 export const getSales = () => axios.get(`${API_URL}/sales`);
 export const createSale = (sale) => axios.post(`${API_URL}/sales`, sale);
+export const login = (login) => axios.post(`${API_URL}/api/login`, login);
+export const register = (register) => axios.post(`${API_URL}/api/register`, register);
+

@@ -12,10 +12,15 @@ connectDb();
 const productRouter= require('./routes/productsRoutes.js');
 const userRouter=require('./routes/usersRoutes.js');
 const salesRouter=require('./routes/salesRoutes.js')
+const authRoutes = require('./routes/auth.js');
 
-//middleware
+
+//middlewares
+//cors middle ware
 app.use(cors());
+//body parser middleware
 app.use(express.json());
+//for Moran plugin
  app.use(morgan('dev'));
 
 
@@ -23,10 +28,12 @@ app.use(express.json());
 app.use('/', productRouter);
 app.use('/users',userRouter);
 app.use('/sales',salesRouter);
+app.use('/api', authRoutes);
 
 
 //error handling middleware
 app.use((err,req,res,next)=>{
+  console.log(req.body);
   res.status(500).send('something went wrong');
 })
 

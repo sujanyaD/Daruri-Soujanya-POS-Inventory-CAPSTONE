@@ -3,19 +3,19 @@ const ProductSchema = new mongoose.Schema(
     {
         ProductName: {
             type: String,
-            required: false,
+            required: true,
         },
         ProductPrice: {
             type: Number,
-            required: false,
+            required: true,
         },
         ProductCatogry: {
             type: String,
-            required: false,
+            required: true,
         },
         Imagepath:{
             type: String,
-            required: false,
+            required: true,
 
         }
     },

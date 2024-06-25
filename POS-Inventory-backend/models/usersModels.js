@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
-  full_name: { type: String },
+  fullname: { type: String },
   email: { type: String },
-  role: { type: String, enum: ['admin', 'cashier', 'manager'], default: 'cashier' },
+  // role: { type: String, enum: ['admin', 'cashier', 'manager'], default: 'cashier' },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 });
@@ -17,3 +17,5 @@ const User = mongoose.model('User', userSchema);
 
 // Export the model
 module.exports = User;
+
+

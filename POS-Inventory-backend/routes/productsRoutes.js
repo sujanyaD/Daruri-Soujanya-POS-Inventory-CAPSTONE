@@ -11,11 +11,11 @@ const productController=require('../controllers/productsControllers');
 router.get('/products',productController.getAllProducts);
 
 //POST New product products
-router.post('/add-product',productController.updateProduct);
+router.post('/addproduct',productController.addNewProduct);
 
 //Edit new product
-router.put('/edit-product',productController.editProduct);
+router.put('/editproduct',productController.editProduct);
 //Delete product
-router.delete('/detete-product',productController.deleteProduct);
+router.delete('/deteteproduct',productController.deleteProduct);
 
 module.exports = router;
