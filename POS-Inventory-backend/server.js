@@ -14,7 +14,6 @@ const userRouter=require('./routes/usersRoutes.js');
 const salesRouter=require('./routes/salesRoutes.js')
 const authRoutes = require('./routes/auth.js');
 
-
 //middlewares
 //cors middle ware
 app.use(cors());
@@ -23,13 +22,11 @@ app.use(express.json());
 //for Moran plugin
  app.use(morgan('dev'));
 
-
 //routes
 app.use('/', productRouter);
 app.use('/users',userRouter);
 app.use('/sales',salesRouter);
 app.use('/api', authRoutes);
-
 
 //error handling middleware
 app.use((err,req,res,next)=>{

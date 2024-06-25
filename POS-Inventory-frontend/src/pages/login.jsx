@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { redirect, useNavigate} from 'react-router-dom';// used useNavigate hook for redirection
 import axios from 'axios';
 import {login} from '../services/api';
+import '../styles/App.css';
+import backgroundimage from '../Images/homebanner.jpg';
+
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +25,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className='mylogin'>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
@@ -33,3 +37,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

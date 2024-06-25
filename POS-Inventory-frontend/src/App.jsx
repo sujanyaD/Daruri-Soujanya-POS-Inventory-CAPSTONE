@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,Navigate} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Layout from './components/layout';
@@ -19,10 +19,12 @@ const App = () => {
          <Route  path="/register" element={<Register/>} />
           <Route path="/products" element={<Products />} />
           <Route path="/sales" element={<Sales />} />
+          <Route path='*' element={<Navigate to="/login"/>}/>
         </Routes>
       </Layout>
     </Router>
   );
 };
+ export default App;
 
-export default App;
+

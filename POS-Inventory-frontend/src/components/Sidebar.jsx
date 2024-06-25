@@ -25,7 +25,6 @@ const SidebarPOS = () => {
             className="text-decoration-none"
             style={{ color: 'inherit' }}
           >
-           POS-IMS
           </a>
         </CDBSidebarHeader>
 
@@ -76,3 +75,6 @@ const SidebarPOS = () => {
 };
 
 export default SidebarPOS;
+
+
+

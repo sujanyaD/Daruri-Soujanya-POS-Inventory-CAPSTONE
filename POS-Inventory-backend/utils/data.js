@@ -77,6 +77,30 @@ const homeDecorProducts = [
     ProductCatogry: "furniture",
     Imagepath: "https://dezigndistrict.com.my/media/mageplaza/blog/post/i/m/image6_3.png",
   },
+  {
+  ProductName: "Vintage Brass Floor Lamp",
+  ProductPrice: 350,
+  ProductCategory: "lighting",
+  Imagepath: "https://assets.roomstogo.com/product/yaxley-brass-floor-lamp_90225903_image-item?cache-id=02487d1500291b778015bd53208d4557&w=1080&q=80",
+},
+{
+  ProductName: "Handwoven Wool Rug",
+  ProductPrice: 700,
+  ProductCategory: "textiles",
+  Imagepath: "https://cdn.accentuate.io/7104463536315/1686329873941/Lalita_Area_Rug_1.jpg?v=1686329873941&transform=resize=600",
+},
+{
+  ProductName: "Antique Wooden Chest",
+  ProductPrice: 1200,
+  ProductCategory: "furniture",
+  Imagepath: "https://res.cloudinary.com/castlery/image/private/w_700,f_auto,q_auto/b_rgb:F3F3F3,c_fit/v1697772401/crusader/variants/40280044/Crescent-6-Drawer-Dresser-Square-Set_1-1697772399.jpg",
+},
+{
+  ProductName: "Marble Top Side Table",
+  ProductPrice: 950,
+  ProductCategory: "furniture",
+  Imagepath: "https://i.etsystatic.com/5289549/r/il/1b6a74/269364797/il_1140xN.269364797.jpg",
+},
 
 ];
 // console.log(homeDecorProducts);

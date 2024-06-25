@@ -8,31 +8,30 @@
 
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  height: 100%;
 }
 
+
+.sidebar-footer {
+  text-align: center;
+  padding: 20px 5px;
+}
+
+/* .backgroundlogin{
+  background-color:;
+} */
+body{
+  width:100%;
+  
+}
+    
+.mylogin{
+  width:100%;
+  background-image: url('../Images/homebanner.jpg');
+  height: 100vh;
+}
 
 
