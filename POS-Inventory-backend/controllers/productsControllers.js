@@ -13,21 +13,6 @@ const getAllProducts = async (req, res) => {
     console.log(error);
    }
   };
-  //edit product
-  const editProduct = async(req,res)=>{
-    try{
-        const {productId} =req.body;
-        console.log(productId);
-        await productsModel.findOneAndUpdate({_id:productId},req.body,{
-            new:true,
-        });
-        res.status(201).json("product updated");
-    }catch(error){
-        res.status(400).send(error);
-        console.log(error);
-    }
-  };
-
   //add new products
   const addNewProduct= async (req,res)=>{
     try{
@@ -43,12 +28,10 @@ const getAllProducts = async (req, res) => {
   // Update existing product 
 const updateProduct = async (req, res) => {
     try {
-        const { productId } = req.body;
-        const updatedProduct = await productsModel.findOneAndUpdate(
-            { _id: productId },
-            req.body,
-            { new: true }
-        );
+        const productId = req.query.id;
+        const updateData  = req.body;
+        console.log(productId);
+        const updatedProduct = await productsModel.findOneAndUpdate({ _id: productId }, updateData, { new: true });
         if (!updatedProduct) {
             return res.status(404).send("Product not found");
         }
@@ -76,4 +59,4 @@ const deleteProduct = async (req, res) => {
 };
 
 
-  module.exports = {  getAllProducts,updateProduct,deleteProduct,editProduct,addNewProduct};
+  module.exports = {  getAllProducts,updateProduct,deleteProduct,addNewProduct};

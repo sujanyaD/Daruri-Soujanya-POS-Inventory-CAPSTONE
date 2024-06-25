@@ -14,7 +14,7 @@ router.get('/products',productController.getAllProducts);
 router.post('/addproduct',productController.addNewProduct);
 
 //Edit new product
-router.put('/editproduct',productController.editProduct);
+router.put('/editproduct',productController.updateProduct);
 //Delete product
 router.delete('/deleteproduct',productController.deleteProduct);
 

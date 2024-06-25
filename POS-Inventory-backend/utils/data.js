@@ -101,6 +101,12 @@ const homeDecorProducts = [
   ProductCategory: "furniture",
   Imagepath: "https://i.etsystatic.com/5289549/r/il/1b6a74/269364797/il_1140xN.269364797.jpg",
 },
+{
+  ProductName: "Coffee Table",
+  ProductPrice: 980,
+  ProductCatogry: "furniture",
+  Imagepath: "https://i5.walmartimages.com/asr/9997fa8d-5f1d-4972-a018-ccee93c1326f_2.324b83b170a6141ffeda22ac0a8fc35f.jpeg",
+},
 
 ];
 // console.log(homeDecorProducts);

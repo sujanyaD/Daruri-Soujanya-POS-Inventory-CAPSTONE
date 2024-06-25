@@ -44,20 +44,11 @@ const Products = () => {
       <Grid item xs={12}>
         <h2>Products</h2>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={4}>
         <TextField
           label="Name"
           value={newProduct.ProductName}
           onChange={(e) => setNewProduct({ ...newProduct, ProductName: e.target.value })}
-          fullWidth
-        />
-      </Grid>
-      <Grid item xs={12} md={3}>
-        <TextField
-          label="Price"
-          type="number"
-          value={newProduct.ProductPrice}
-          onChange={(e) => setNewProduct({ ...newProduct, ProductPrice: parseInt(e.target.value) || 0 })}
           fullWidth
         />
       </Grid>
@@ -71,6 +62,16 @@ const Products = () => {
       </Grid>
       <Grid item xs={12} md={3}>
         <TextField
+          label="Price"
+          type="number"
+          value={newProduct.ProductPrice}
+          onChange={(e) => setNewProduct({ ...newProduct, ProductPrice: parseInt(e.target.value) || 0 })}
+          fullWidth
+        />
+      </Grid>
+      
+      <Grid item xs={12} md={2}>
+        <TextField
           label="Quantity"
           type="number"
           value={newProduct.ProductQuantity}
@@ -78,19 +79,23 @@ const Products = () => {
           fullWidth
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={4} flexDirection={"right"}>
         <Button onClick={handleCreateProduct} variant="contained" color="primary">
           Add Product
         </Button>
       </Grid>
+      <Grid item xs={12}>
+        
+      </Grid>
       {products.map((product) => (
-        <Grid item xs={4} sm={4} md={4} key={product._id}>
+        <Grid item xs={3} sm={4} md={4} key={product._id}>
           <Card>
             <CardContent>
               <h3>{product.ProductName}</h3>
+              <p>Category:{product.ProductCategory}</p>
               <p>Price: ${product.ProductPrice}</p>
               <p>Quantity: {product.ProductQuantity} pcs</p>
-              <img src={product.Imagepath} alt={product.ProductName} style={{ height: '350px', width: '300px', objectFit: 'cover' }} />
+              <img src={product.Imagepath} alt={product.ProductName} style={{ height: '300px', width: '300px', objectFit: 'cover' }} />
             </CardContent>
             <CardActions>
               <Button onClick={() => handleEditProduct(product)} variant="outlined" color="primary">
@@ -126,6 +131,12 @@ const Products = () => {
                 type="number"
                 value={editProduct.ProductQuantity}
                 onChange={(e) => setEditProduct({ ...editProduct, ProductQuantity: parseInt(e.target.value) || 0 })}
+                fullWidth
+              />
+                 <TextField
+                label="Category"
+                value={editProduct.ProductCategory}
+                onChange={(e) => setEditProduct({ ...editProduct, ProductCategory: e.target.value})}
                 fullWidth
               />
             </DialogContent>
