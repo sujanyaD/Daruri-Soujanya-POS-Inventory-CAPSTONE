@@ -5,11 +5,13 @@ import {Box} from '@mui/material';
 
 const Layout = ({ children }) => {
     return (
-        <Box display="flex">
+        <Box display="flex" sx={{
+            position:"fixed",left:0
+        }}>
             <Box>
                 <Sidebar />
             </Box>
-            <Box flexGrow={4} padding={3}>
+            <Box flexGrow={6} padding={3}>
                 {children}
             </Box>
             <Box>

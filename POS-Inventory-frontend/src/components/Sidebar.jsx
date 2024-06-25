@@ -31,15 +31,20 @@ const SidebarPOS = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
+          <NavLink exact to="/login" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Login</CDBSidebarMenuItem>
+            </NavLink>
             <NavLink exact to="/products" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Products</CDBSidebarMenuItem>
+            </NavLink>
+            
+            <NavLink exact to="/register" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Registration Page</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/tables" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Sales</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-            </NavLink>
+           
             <NavLink exact to="/analytics" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">
                 Analytics

@@ -1,4 +1,5 @@
 
+const { default: mongoose } = require('mongoose');
 const productsModel = require('../models/productsModels.js');
 //Get Items
 const getAllProducts = async (req, res) => {
@@ -60,9 +61,9 @@ const updateProduct = async (req, res) => {
   // Delete product
 const deleteProduct = async (req, res) => {
     try {
-        const { productId } = req.body;
-        console.log(req.body);
-        const deletedProduct = await productsModel.findById( productId );
+        const { productId } = req.query;
+        console.log(productId._id);
+        const deletedProduct = await productsModel.findOneAndDelete({ _id: productId});
         // console.log("deletedProduct",deletedProduct.value);
         if (!deletedProduct) {
             return res.status(404).send("Product not found");
@@ -73,5 +74,6 @@ const deleteProduct = async (req, res) => {
         res.status(400).send("Error deleting product");
     }
 };
+
 
   module.exports = {  getAllProducts,updateProduct,deleteProduct,editProduct,addNewProduct};

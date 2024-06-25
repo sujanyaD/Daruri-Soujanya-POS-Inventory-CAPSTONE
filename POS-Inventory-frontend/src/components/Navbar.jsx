@@ -22,7 +22,6 @@ function NavbarPOS() {
           <Nav className="me-auto">
             
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#products">Products</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">MakeUp Products</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Home Decor Products</NavDropdown.Item>
