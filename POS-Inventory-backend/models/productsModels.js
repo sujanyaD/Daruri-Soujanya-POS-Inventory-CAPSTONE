@@ -11,11 +11,11 @@ const ProductSchema = new mongoose.Schema(
         },
         ProductCatogry: {
             type: String,
-            required: true,
+            required: false,
         },
         Imagepath:{
             type: String,
-            required: true,
+            required: false,
 
         }
     },

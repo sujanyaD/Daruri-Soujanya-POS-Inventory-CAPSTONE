@@ -1,34 +1,72 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { List, ListItem, ListItemText, Drawer,Grid } from '@mui/material';
 
-const drawerWidth = 240; 
+import React from 'react';
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarFooter,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
 
 const SidebarPOS = () => {
   return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-          backgroundColor:'darkslategrey', 
-        },
-      }}
-      anchor="left"
+    <div
+      style={{ display:'flex',justifyContent: 'flex-start',
+        height: '100%',
+         }}
     >
-      <List>
-        <ListItem component={Link} to="/products">
-          <ListItemText primary="Products" />
-        </ListItem>
-        <ListItem component={Link} to="/sales">
-          <ListItemText primary="Sales" />
-        </ListItem>
-      </List>
-    </Drawer>
+      <CDBSidebar textColor="#fff" backgroundColor="#333">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          <a
+            href="/"
+            className="text-decoration-none"
+            style={{ color: 'inherit' }}
+          >
+           POS-IMS
+          </a>
+        </CDBSidebarHeader>
+
+        <CDBSidebarContent className="sidebar-content">
+          <CDBSidebarMenu>
+            <NavLink exact to="/products" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns">Products</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/tables" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Sales</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/profile" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">
+                Analytics
+              </CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink
+              exact
+              to="/hero404"
+              target="_blank"
+              activeClassName="activeClicked"
+            >
+              </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+
+        <CDBSidebarFooter style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              padding: '20px 5px',
+            }}
+          >
+            &copy; {new Date().getFullYear()} POS@DS. All rights reserved.
+          </div>
+        </CDBSidebarFooter>
+      </CDBSidebar>
+    </div>
   );
 };
 

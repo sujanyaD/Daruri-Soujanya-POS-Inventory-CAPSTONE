@@ -34,7 +34,7 @@ const getAllProducts = async (req, res) => {
         await newProduct.save();
         res.status(201).send("New Product added Sucessfully");
     }catch(error){
-        res.status(400).send("error",error);
+        // res.status(400).send("error",error);
         console.log(error);
     }
   };
@@ -61,7 +61,9 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const { productId } = req.body;
-        const deletedProduct = await productsModel.findOneAndDelete({ _id: productId });
+        console.log(req.body);
+        const deletedProduct = await productsModel.findById( productId );
+        // console.log("deletedProduct",deletedProduct.value);
         if (!deletedProduct) {
             return res.status(404).send("Product not found");
         }
@@ -71,6 +73,5 @@ const deleteProduct = async (req, res) => {
         res.status(400).send("Error deleting product");
     }
 };
-
 
   module.exports = {  getAllProducts,updateProduct,deleteProduct,editProduct,addNewProduct};

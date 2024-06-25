@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, L
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [newProduct, setNewProduct] = useState({ name: '', price: 0, quantity: 0 });
+  const [newProduct, setNewProduct] = useState({ ProductName: '', ProductPrice: 0, ProductCatogry:'', ProductQuantity: 0 });
   const [editProduct, setEditProduct] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Products = () => {
   const handleCreateProduct = async () => {
     const { data } = await createProduct(newProduct);
     setProducts([...products, data]);
-    setNewProduct({ name: '', price: 0, quantity: 0 });
+    setNewProduct({ ProductName: '', ProductPrice: 0, ProductCatogry:'', ProductQuantity: 0 });
   };
 
   const handleEditProduct = (product) => {
@@ -43,13 +43,16 @@ const Products = () => {
         <h2>Products</h2>
       </Grid>
       <Grid item xs={12} md={6}>
-        <TextField label="Name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} fullWidth />
+        <TextField label="Name" value={newProduct.ProductName} onChange={(e) => setNewProduct({ ...newProduct, ProductName: e.target.value })} fullWidth />
       </Grid>
       <Grid item xs={12} md={3}>
-        <TextField label="Price" type="number" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: parseInt(e.target.value) || 0 })} fullWidth />
+        <TextField label="Price" type="number" value={newProduct.ProductPrice} onChange={(e) => setNewProduct({ ...newProduct, ProductPrice: parseInt(e.target.value) || 0 })} fullWidth />
       </Grid>
       <Grid item xs={12} md={3}>
-        <TextField label="Quantity" type="number" value={newProduct.quantity} onChange={(e) => setNewProduct({ ...newProduct, quantity: parseInt(e.target.value) || 0 })} fullWidth />
+        <TextField label="Category"  value={newProduct.ProductCatogry} onChange={(e) => setNewProduct({ ...newProduct, ProductCatogry: e.target.value})} fullWidth />
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <TextField label="Quantity" type="number" value={newProduct.ProductQuantity} onChange={(e) => setNewProduct({ ...newProduct, ProductQuantity: parseInt(e.target.value) || 0 })} fullWidth />
       </Grid>
       <Grid item xs={12}>
         <Button onClick={handleCreateProduct} variant="contained" color="primary">Add Product</Button>
@@ -75,22 +78,22 @@ const Products = () => {
             <DialogContent>
               <TextField
                 label="Name"
-                value={editProduct.name}
-                onChange={(e) => setEditProduct({ ...editProduct, name: e.target.value })}
+                value={editProduct.ProductName}
+                onChange={(e) => setEditProduct({ ...editProduct, ProductName: e.target.value })}
                 fullWidth
               />
               <TextField
                 label="Price"
                 type="number"
-                value={editProduct.price}
-                onChange={(e) => setEditProduct({ ...editProduct, price: parseInt(e.target.value) || 0 })}
+                value={editProduct.ProductPrice}
+                onChange={(e) => setEditProduct({ ...editProduct, ProductPrice: parseInt(e.target.value) || 0 })}
                 fullWidth
               />
               <TextField
                 label="Quantity"
                 type="number"
-                value={editProduct.quantity}
-                onChange={(e) => setEditProduct({ ...editProduct, quantity: parseInt(e.target.value) || 0 })}
+                value={editProduct.ProductQuantity}
+                onChange={(e) => setEditProduct({ ...editProduct, ProductQuantity: parseInt(e.target.value) || 0 })}
                 fullWidth
               />
             </DialogContent>
