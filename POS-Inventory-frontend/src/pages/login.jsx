@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { login } from '../services/api';
 import '../styles/App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,8 +20,10 @@ const Login = () => {
       const { data } = await login({ username, password });
       localStorage.setItem('token', data.token);
       navigate('/products');
+      toast.success('Login successful');
     } catch (err) {
       console.error(err.response.data.msg);
+      toast.error(err.response.data.msg);
     }
   };
 

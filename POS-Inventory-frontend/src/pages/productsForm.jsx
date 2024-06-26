@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { getProducts, createProduct, updateProduct, deleteProduct } from '../services/api';
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Card, CardContent, CardActions, Typography } from '@mui/material';
 
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ ProductName: '', ProductPrice: 0, ProductCategory: '', ProductQuantity: 0 });
@@ -19,9 +20,14 @@ const Products = () => {
   };
 
   const handleCreateProduct = async () => {
+    try{
     const { data } = await createProduct(newProduct);
     setProducts([...products, data]);
     setNewProduct({ ProductName: '', ProductPrice: 0, ProductCategory: '', ProductQuantity: 0 });
+    
+    } catch (error) {
+      
+    }
   };
 
   const handleEditProduct = (product) => {

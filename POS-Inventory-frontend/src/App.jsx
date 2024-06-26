@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes,Navigate} from 'react-router-dom';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Layout from './components/layout';
 import Products from './pages/productsForm';
 import Sales from './pages/salesFom';
