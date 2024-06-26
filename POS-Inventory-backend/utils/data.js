@@ -107,6 +107,12 @@ const homeDecorProducts = [
   ProductCatogry: "furniture",
   Imagepath: "https://i5.walmartimages.com/asr/9997fa8d-5f1d-4972-a018-ccee93c1326f_2.324b83b170a6141ffeda22ac0a8fc35f.jpeg",
 },
+{
+  ProductName: "Vases",
+  ProductPrice: 980,
+  ProductCatogry: "decor",
+  Imagepath: "https://lifeonvirginiastreet.com/wp-content/uploads/2021/09/white-ceramic-vases-styling-23-1365x2048.jpg",
+},
 
 ];
 // console.log(homeDecorProducts);

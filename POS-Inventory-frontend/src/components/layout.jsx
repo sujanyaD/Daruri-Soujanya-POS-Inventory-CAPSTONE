@@ -6,22 +6,49 @@ import { Box } from "@mui/material";
 const Layout = ({ children }) => {
   return (
     <Box
-      display="flex"
       sx={{
-        position: "absolute",
-        left: 0,
+        display: "flex",
+        position: "relative",
+        // height: "100vh",
+        overflow: "hidden",
+        width:"1500px"
       }}
     >
-      <Box>
+      {/* Sidebar */}
+      <Box
+        sx={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: "240px",
+          backgroundColor: "#f0f0f0",
+          borderRight: "1px solid #ccc",
+          zIndex: 1,
+          overflowY: "none", 
+        }}
+      >
         <Sidebar />
       </Box>
-      <Box flexGrow={4} padding={3}>
+
+      
+      <Box
+        sx={{
+       
+          padding: 0,
+          marginLeft: "80px", 
+          overflowY: "auto", 
+          position: "relative", 
+          zIndex: 0, 
+          
+
+        }}
+      >
         {children}
       </Box>
-      <Box>
-        <Navbar/>
-      </Box>
-    </Box>
+
+         </Box>
   );
 };
+
 export default Layout;

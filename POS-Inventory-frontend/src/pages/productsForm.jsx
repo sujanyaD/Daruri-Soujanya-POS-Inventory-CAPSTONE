@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getProducts, createProduct, updateProduct, deleteProduct } from '../services/api';
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Card, CardContent, CardActions } from '@mui/material';
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Card, CardContent, CardActions, Typography } from '@mui/material';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -42,7 +42,7 @@ const Products = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <h2>Products</h2>
+        <Typography variant="h4">Products</Typography>
       </Grid>
       <Grid item xs={12} md={4}>
         <TextField

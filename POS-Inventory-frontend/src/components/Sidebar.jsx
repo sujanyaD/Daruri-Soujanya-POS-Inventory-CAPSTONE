@@ -40,7 +40,7 @@ const SidebarPOS = () => {
             <NavLink exact to="/register" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Registration Page</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
+            <NavLink exact to="/Sales" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Sales</CDBSidebarMenuItem>
             </NavLink>
            
