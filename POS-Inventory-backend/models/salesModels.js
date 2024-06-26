@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const ProductSchema = require('./productsModels');
-const UserSchema = require('./usersModels'); // Assuming your ProductSchema is defined in a separate file
+const UserSchema = require('./usersModels'); 
 
-// Define a new schema for Sales
+
 const SaleSchema = new mongoose.Schema(
     {
       products:[{
@@ -34,7 +34,7 @@ const SaleSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-// Create and export the Sale model based on SaleSchema
+
 const Sale = mongoose.model('Sale', SaleSchema);
 
 module.exports = Sale;
