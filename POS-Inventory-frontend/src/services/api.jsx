@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000';
+//const API_URL = 'http://localhost:5000';
+const API_URL ='https://daruri-soujanya-pos-inventory-capstone.onrender.com';
 
 export const getProducts = () => axios.get(`${API_URL}/products`);
 export const createProduct = (product) => axios.post(`${API_URL}/addproduct`, product);
